@@ -32,7 +32,7 @@ export default function WhatWeBelieve() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 lg:py-20 bg-deep-navy overflow-hidden"
+      className="relative py-14 sm:py-16 lg:py-20 bg-deep-navy overflow-hidden"
     >
       {/* Subtle gradient accents */}
       <div
@@ -59,7 +59,7 @@ export default function WhatWeBelieve() {
         >
           <Quote className="w-12 h-12 text-cyan-accent/50 mx-auto mb-6" />
 
-          <p className="text-2xl sm:text-3xl font-bold text-white italic leading-relaxed">
+          <p className="text-xl sm:text-3xl font-bold text-white italic leading-relaxed">
             "With good data and the right technology, people and institutions
             today can still solve hard problems and change the world for the
             better."

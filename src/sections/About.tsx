@@ -60,7 +60,7 @@ function LeaderImage({
 export default function About() {
   return (
     <section id="about">
-      <div className="bg-off-white py-20 lg:py-28">
+      <div className="bg-off-white py-16 sm:py-20 lg:py-28">
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
@@ -68,7 +68,7 @@ export default function About() {
 
               <span className="section-label-light">ABOUT US</span>
 
-              <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-slate-900 leading-tight">
+              <h2 className="mt-4 text-2xl sm:text-4xl font-bold text-slate-900 leading-tight">
                 We Bridge the Gap Between Vision and Execution
               </h2>
 
@@ -82,7 +82,7 @@ export default function About() {
               </p>
 
               <div className="mt-8 pl-5 border-l-[3px] border-blue-primary">
-                <p className="text-lg text-slate-800 italic leading-relaxed">
+                <p className="text-base sm:text-lg text-slate-800 italic leading-relaxed">
                   "We empower businesses to grow and innovate by delivering
                   elite tech talent, custom development, and strategic digital
                   transformation - bridging vision and execution for a
@@ -105,13 +105,13 @@ export default function About() {
 
       <div className="bg-deep-navy text-white">
         <div className="container-main">
-        <div className="grid min-h-[640px] grid-cols-1 items-center gap-10 py-20 lg:grid-cols-2 lg:py-28">
+        <div className="grid min-h-[640px] grid-cols-1 items-center gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:py-28">
           <div className="max-w-2xl">
             <div>
-              <h2 className="text-4xl sm:text-5xl font-bold uppercase text-cyan-accent">
+              <h2 className="text-3xl sm:text-5xl font-bold uppercase text-cyan-accent">
                 Vision
               </h2>
-              <p className="mt-8 text-base sm:text-lg leading-8">
+              <p className="mt-5 sm:mt-8 text-base sm:text-lg leading-7 sm:leading-8">
                 To be the world's most trusted partner in tech innovation,
                 enabling businesses to harness the power of technology for
                 sustainable growth and competitive advantage.
@@ -119,10 +119,10 @@ export default function About() {
             </div>
 
             <div className="mt-14">
-              <h2 className="text-4xl sm:text-5xl font-bold uppercase text-cyan-accent">
+              <h2 className="text-3xl sm:text-5xl font-bold uppercase text-cyan-accent">
                 Mission
               </h2>
-              <p className="mt-8 text-base sm:text-lg leading-8">
+              <p className="mt-5 sm:mt-8 text-base sm:text-lg leading-7 sm:leading-8">
                 We empower businesses to grow and innovate by delivering elite
                 tech talent, custom development, and strategic digital
                 transformation-bridging vision and execution for a future-ready
@@ -144,7 +144,7 @@ export default function About() {
         {leaderMessages.map((leader) => (
           <div
             key={leader.name}
-            className="grid min-h-[680px] grid-cols-1 items-center gap-10 py-20 lg:grid-cols-2 lg:gap-16 lg:py-28"
+            className="grid min-h-[680px] grid-cols-1 items-center gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-28"
           >
             {leader.imageSide === 'left' && (
               <LeaderImage

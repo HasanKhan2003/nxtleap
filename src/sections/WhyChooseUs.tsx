@@ -86,13 +86,13 @@ export default function WhyChooseUs() {
     <section
       id="why-choose-us"
       ref={sectionRef}
-      className="bg-slate-100-custom pt-20 lg:pt-28"
+      className="bg-slate-100-custom pt-16 sm:pt-20 lg:pt-28"
     >
       <div className="container-main">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-14">
           <span className="section-label-light">WHY CHOOSE US</span>
-          <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-slate-900">
+          <h2 className="mt-4 text-2xl sm:text-4xl font-bold text-slate-900">
             5 Reasons to Partner With Us
           </h2>
         </div>
@@ -158,10 +158,10 @@ export default function WhyChooseUs() {
             />
 
             <div className="text-center">
-              <h2 className="text-4xl sm:text-5xl font-bold uppercase text-cyan-accent">
+              <h2 className="text-3xl sm:text-5xl font-bold uppercase text-cyan-accent">
                 What We Believe
               </h2>
-              <p className="mx-auto mt-8 max-w-2xl text-base sm:text-lg leading-8">
+              <p className="mx-auto mt-5 sm:mt-8 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8">
                 With good data and the right technology, people and institutions
                 today can still solve hard problems and change the world for the
                 better.
@@ -179,7 +179,7 @@ export default function WhyChooseUs() {
           <div className="mt-28">
             <div className="flex items-center justify-center gap-6">
               <div className="hidden h-px flex-1 bg-cyan-accent sm:block" />
-              <h3 className="text-4xl sm:text-5xl font-bold uppercase text-cyan-accent">
+              <h3 className="text-3xl sm:text-5xl font-bold uppercase text-cyan-accent">
                 Trusted By
               </h3>
               <div className="hidden h-px flex-1 bg-cyan-accent sm:block" />

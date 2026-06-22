@@ -96,7 +96,7 @@ export default function Navbar({ scrollTo }: NavbarProps) {
             <button
               key={link.target}
               onClick={() => handleNavClick(link.target)}
-              className="text-2xl font-semibold text-white/80 hover:text-white transition-colors"
+              className="text-xl font-semibold text-white/80 hover:text-white transition-colors"
               style={{
                 animationDelay: `${i * 50}ms`,
               }}
@@ -106,7 +106,7 @@ export default function Navbar({ scrollTo }: NavbarProps) {
           ))}
           <button
             onClick={() => handleNavClick('#contact')}
-            className="btn-primary mt-4 px-10 py-4 text-lg"
+            className="btn-primary mt-4 px-8 py-3.5 text-base"
           >
             Hire Talent
           </button>

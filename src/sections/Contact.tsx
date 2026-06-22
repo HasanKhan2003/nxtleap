@@ -69,7 +69,7 @@ export default function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="py-20 lg:py-28 bg-[#0F172A]"
+      className="py-16 sm:py-20 lg:py-28 bg-[#0F172A]"
     >
       <div className="container-main">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -77,7 +77,7 @@ export default function Contact() {
           <div ref={leftRef}>
             <span className="section-label-light">CONNECT WITH US</span>
 
-            <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-white leading-tight">
+            <h2 className="mt-4 text-2xl sm:text-4xl font-bold text-white leading-tight">
               Let's Build Something Great Together
             </h2>
 
@@ -115,7 +115,7 @@ export default function Contact() {
           {/* Right - Form */}
           <div
             ref={rightRef}
-            className="p-8 lg:p-10 rounded-2xl bg-white/[0.03] border border-white/[0.08]"
+            className="p-6 sm:p-8 lg:p-10 rounded-2xl bg-white/[0.03] border border-white/[0.08]"
           >
             {submitted ? (
               <div className="text-center py-10">

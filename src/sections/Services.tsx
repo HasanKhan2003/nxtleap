@@ -55,7 +55,7 @@ export default function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="relative py-20 lg:py-28 overflow-hidden"
+      className="relative py-16 sm:py-20 lg:py-28 overflow-hidden"
     >
       {/* Subtle mesh gradient bg */}
       <div className="absolute inset-0 bg-deep-navy">
@@ -73,7 +73,7 @@ export default function Services() {
           <div>
             {/* Header */}
             <div ref={headerRef} className="mb-10">
-              <span className="text-4xl sm:text-5xl font-bold uppercase text-cyan-accent">
+              <span className="text-3xl sm:text-5xl font-bold uppercase text-cyan-accent">
                 What We Offer
               </span>
             </div>
@@ -97,12 +97,12 @@ export default function Services() {
 
                     <div>
                       {/* Title */}
-                      <h3 className="text-xl sm:text-2xl font-bold uppercase text-cyan-accent mb-4">
+                      <h3 className="text-lg sm:text-2xl font-bold uppercase text-cyan-accent mb-3 sm:mb-4">
                         {service.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="max-w-2xl text-base text-white leading-7">
+                      <p className="max-w-2xl text-sm sm:text-base text-white leading-6 sm:leading-7">
                         {service.description}
                       </p>
                     </div>
