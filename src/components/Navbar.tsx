@@ -66,9 +66,6 @@ export default function Navbar({ scrollTo }: NavbarProps) {
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-4">
-            <button className="text-sm font-medium text-white/70 hover:text-white transition-colors">
-              Login
-            </button>
             <button
               onClick={() => handleNavClick('#contact')}
               className="btn-primary text-sm py-2.5 px-6"

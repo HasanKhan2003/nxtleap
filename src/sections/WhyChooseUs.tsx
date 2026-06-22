@@ -86,7 +86,7 @@ export default function WhyChooseUs() {
     <section
       id="why-choose-us"
       ref={sectionRef}
-      className="bg-slate-100-custom py-20 lg:py-28"
+      className="bg-slate-100-custom pt-20 lg:pt-28"
     >
       <div className="container-main">
         {/* Header */}

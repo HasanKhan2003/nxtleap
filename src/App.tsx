@@ -10,7 +10,6 @@ import About from './sections/About'
 import Services from './sections/Services'
 import WhyChooseUs from './sections/WhyChooseUs'
 import WhatWeBelieve from './sections/WhatWeBelieve'
-import TrustedBy from './sections/TrustedBy'
 import Testimonials from './sections/Testimonials'
 import Contact from './sections/Contact'
 
@@ -54,7 +53,6 @@ function App() {
         <Services />
         <WhyChooseUs />
         <WhatWeBelieve />
-        <TrustedBy />
         <Testimonials />
         <Contact />
       </main>
