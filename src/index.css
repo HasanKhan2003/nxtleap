@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 187 94% 43%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+    --radius: 0.625rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-deep-navy text-white antialiased;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  /* Mesh Gradient Background */
+  .mesh-gradient-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    background: #0B1120;
+  }
+
+  .mesh-gradient-bg::before,
+  .mesh-gradient-bg::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    will-change: transform;
+  }
+
+  .mesh-gradient-bg::before {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.4) 0%, transparent 70%);
+    animation: meshMove1 12s ease-in-out infinite alternate;
+  }
+
+  .mesh-gradient-bg::after {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.35) 0%, transparent 70%);
+    animation: meshMove2 15s ease-in-out infinite alternate;
+  }
+
+  .mesh-layer {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(80px);
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, transparent 70%);
+    animation: meshMove3 18s ease-in-out infinite alternate;
+    will-change: transform;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gradient background */
+  .gradient-bg {
+    background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
+  }
+
+  /* Section label style */
+  .section-label {
+    @apply text-xs font-semibold tracking-[0.1em] uppercase text-cyan-accent;
+  }
+
+  .section-label-light {
+    @apply text-xs font-semibold tracking-[0.1em] uppercase text-blue-primary;
+  }
+
+  /* Container */
+  .container-main {
+    @apply max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Card hover */
+  .card-hover {
+    @apply transition-all duration-400;
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-2 shadow-lg;
+  }
+
+  /* Button primary */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-3.5 rounded-full font-semibold text-sm text-white transition-all duration-300;
+    background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
+  }
+
+  .btn-primary:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 8px 30px rgba(37, 99, 235, 0.35);
+  }
+
+  /* Button outline */
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-3.5 rounded-full font-semibold text-sm border border-white/30 text-white bg-transparent transition-all duration-300;
+  }
+
+  .btn-outline:hover {
+    @apply border-blue-primary bg-blue-primary/10;
+  }
+
+  /* Input dark */
+  .input-dark {
+    @apply w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 transition-all duration-300 outline-none;
+  }
+
+  .input-dark:focus {
+    @apply border-blue-primary;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  }
+}
+
+@keyframes meshMove1 {
+  0% { transform: translate(-10%, -10%) scale(1); }
+  50% { transform: translate(30%, 20%) scale(1.3); }
+  100% { transform: translate(10%, 60%) scale(1); }
+}
+
+@keyframes meshMove2 {
+  0% { transform: translate(80%, 10%) scale(1.2); }
+  50% { transform: translate(40%, 50%) scale(1); }
+  100% { transform: translate(70%, 80%) scale(1.3); }
+}
+
+@keyframes meshMove3 {
+  0% { transform: translate(50%, 80%) scale(1); }
+  50% { transform: translate(20%, 30%) scale(1.4); }
+  100% { transform: translate(60%, 10%) scale(1); }
+}
+
+@keyframes trustedLogoScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.trusted-logo-track {
+  animation: trustedLogoScroll 32s linear infinite;
+}
+
+.trusted-logo-track:hover {
+  animation-play-state: paused;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .mesh-gradient-bg::before,
+  .mesh-gradient-bg::after,
+  .mesh-layer {
+    animation: none !important;
+  }
+
+  .trusted-logo-track {
+    animation: none !important;
+  }
+}
+
+/* Duration utility */
+.duration-400 {
+  transition-duration: 400ms;
+}
