@@ -86,13 +86,13 @@ export default function WhyChooseUs() {
     <section
       id="why-choose-us"
       ref={sectionRef}
-      className="bg-slate-100-custom pt-16 sm:pt-20 lg:pt-28"
+      className="bg-slate-100-custom pt-12 sm:pt-20 lg:pt-28"
     >
       <div className="container-main">
         {/* Header */}
-        <div ref={headerRef} className="text-center mb-14">
+        <div ref={headerRef} className="text-center mb-8 sm:mb-14">
           <span className="section-label-light">WHY CHOOSE US</span>
-          <h2 className="mt-4 text-2xl sm:text-4xl font-bold text-slate-900">
+          <h2 className="mt-3 sm:mt-4 text-xl sm:text-4xl font-bold text-slate-900">
             5 Reasons to Partner With Us
           </h2>
         </div>
@@ -103,10 +103,10 @@ export default function WhyChooseUs() {
             {reasons.slice(0, 3).map((reason) => (
               <div
                 key={reason.number}
-                className="bg-white rounded-2xl p-8 shadow-card card-hover"
+                className="bg-white rounded-2xl p-5 sm:p-8 shadow-card card-hover"
               >
                 {/* Number Badge */}
-                <div className="w-10 h-10 rounded-full gradient-bg flex items-center justify-center mb-5">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full gradient-bg flex items-center justify-center mb-4 sm:mb-5">
                   <span className="text-white font-bold text-sm">
                     {reason.number}
                   </span>
@@ -126,10 +126,10 @@ export default function WhyChooseUs() {
             {reasons.slice(3).map((reason) => (
               <div
                 key={reason.number}
-                className="bg-white rounded-2xl p-8 shadow-card card-hover"
+                className="bg-white rounded-2xl p-5 sm:p-8 shadow-card card-hover"
               >
                 {/* Number Badge */}
-                <div className="w-10 h-10 rounded-full gradient-bg flex items-center justify-center mb-5">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full gradient-bg flex items-center justify-center mb-4 sm:mb-5">
                   <span className="text-white font-bold text-sm">
                     {reason.number}
                   </span>
@@ -147,18 +147,18 @@ export default function WhyChooseUs() {
         </div>
       </div>
 
-      <div className="mt-20 bg-deep-navy py-20 lg:py-28 text-white">
+      <div className="mt-12 sm:mt-20 bg-deep-navy py-12 sm:py-20 lg:py-28 text-white">
         <div className="container-main">
-          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_220px] items-center gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_220px] items-center gap-6 sm:gap-10">
             <img
               src="/images/shape-triangle.png"
               alt=""
-              className="mx-auto w-44 sm:w-56 lg:w-full object-contain"
+              className="hidden sm:block mx-auto w-44 sm:w-56 lg:w-full object-contain"
               loading="lazy"
             />
 
             <div className="text-center">
-              <h2 className="text-3xl sm:text-5xl font-bold uppercase text-cyan-accent">
+              <h2 className="text-2xl sm:text-5xl font-bold uppercase text-cyan-accent">
                 What We Believe
               </h2>
               <p className="mx-auto mt-5 sm:mt-8 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8">
@@ -171,31 +171,31 @@ export default function WhyChooseUs() {
             <img
               src="/images/shape-square-2.png"
               alt=""
-              className="mx-auto w-44 sm:w-56 lg:w-full object-contain"
+              className="hidden sm:block mx-auto w-44 sm:w-56 lg:w-full object-contain"
               loading="lazy"
             />
           </div>
 
-          <div className="mt-28">
+          <div className="mt-12 sm:mt-28">
             <div className="flex items-center justify-center gap-6">
               <div className="hidden h-px flex-1 bg-cyan-accent sm:block" />
-              <h3 className="text-3xl sm:text-5xl font-bold uppercase text-cyan-accent">
+              <h3 className="text-2xl sm:text-5xl font-bold uppercase text-cyan-accent">
                 Trusted By
               </h3>
               <div className="hidden h-px flex-1 bg-cyan-accent sm:block" />
             </div>
 
-            <div className="mt-[-2px] rounded-2xl border-2 border-cyan-accent px-6 py-10 overflow-hidden">
-              <div className="trusted-logo-track flex w-max items-center gap-14">
+            <div className="mt-[-2px] rounded-2xl border-2 border-cyan-accent px-4 sm:px-6 py-6 sm:py-10 overflow-hidden">
+              <div className="trusted-logo-track flex w-max items-center gap-8 sm:gap-14">
                 {[...logos, ...logos].map((logo, index) => (
                   <div
                     key={`${logo}-${index}`}
-                    className="flex h-14 w-36 shrink-0 items-center justify-center"
+                    className="flex h-10 w-24 sm:h-14 sm:w-36 shrink-0 items-center justify-center"
                   >
                     <img
                       src={logo}
                       alt=""
-                      className="max-h-10 max-w-32 object-contain"
+                      className="max-h-7 max-w-24 sm:max-h-10 sm:max-w-32 object-contain"
                       loading="lazy"
                     />
                   </div>

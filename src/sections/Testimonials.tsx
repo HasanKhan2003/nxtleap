@@ -55,7 +55,7 @@ export default function Testimonials() {
     <section
       id="testimonials"
       ref={sectionRef}
-      className="relative py-16 sm:py-20 lg:py-28 overflow-hidden"
+      className="relative py-12 sm:py-20 lg:py-28 overflow-hidden"
     >
       {/* Subtle background */}
       <div className="absolute inset-0 bg-deep-navy">
@@ -70,9 +70,9 @@ export default function Testimonials() {
 
       <div className="relative z-10 container-main">
         {/* Header */}
-        <div ref={headerRef} className="text-center mb-14">
+        <div ref={headerRef} className="text-center mb-8 sm:mb-14">
           <span className="section-label">CLIENT REVIEWS</span>
-          <h2 className="mt-4 text-2xl sm:text-4xl font-bold text-white">
+          <h2 className="mt-3 sm:mt-4 text-xl sm:text-4xl font-bold text-white">
             What Our Clients Say
           </h2>
         </div>
@@ -82,14 +82,14 @@ export default function Testimonials() {
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}
-              className="flex min-h-[520px] flex-col rounded-2xl bg-white/[0.04] p-6 sm:p-8 lg:p-10 transition-all duration-400 hover:bg-white/[0.06]"
+              className="flex flex-col rounded-2xl bg-white/[0.04] p-5 sm:min-h-[520px] sm:p-8 lg:p-10 transition-all duration-400 hover:bg-white/[0.06]"
               style={{
                 transitionTimingFunction:
                   'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
               }}
             >
               {/* Stars */}
-              <div className="flex items-center gap-1 mb-5">
+              <div className="flex items-center gap-1 mb-4 sm:mb-5">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
@@ -99,12 +99,12 @@ export default function Testimonials() {
               </div>
 
               {/* Quote */}
-              <p className="whitespace-pre-line text-sm sm:text-base text-white leading-relaxed mb-10">
+              <p className="line-clamp-8 whitespace-pre-line text-sm sm:line-clamp-none sm:text-base text-white leading-relaxed mb-6 sm:mb-10">
                 {testimonial.quote}
               </p>
 
               {/* Divider */}
-              <div className="mt-auto h-px bg-blue-300/35 mb-6" />
+              <div className="mt-auto h-px bg-blue-300/35 mb-5 sm:mb-6" />
 
               {/* Author */}
               <div>

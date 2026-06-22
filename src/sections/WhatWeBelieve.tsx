@@ -32,7 +32,7 @@ export default function WhatWeBelieve() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-14 sm:py-16 lg:py-20 bg-deep-navy overflow-hidden"
+      className="relative py-10 sm:py-16 lg:py-20 bg-deep-navy overflow-hidden"
     >
       {/* Subtle gradient accents */}
       <div
@@ -57,15 +57,15 @@ export default function WhatWeBelieve() {
           ref={contentRef}
           className="max-w-2xl mx-auto text-center"
         >
-          <Quote className="w-12 h-12 text-cyan-accent/50 mx-auto mb-6" />
+          <Quote className="w-9 h-9 sm:w-12 sm:h-12 text-cyan-accent/50 mx-auto mb-4 sm:mb-6" />
 
-          <p className="text-xl sm:text-3xl font-bold text-white italic leading-relaxed">
+          <p className="text-lg sm:text-3xl font-bold text-white italic leading-relaxed">
             "With good data and the right technology, people and institutions
             today can still solve hard problems and change the world for the
             better."
           </p>
 
-          <p className="mt-8 text-sm text-white/50">— The NXT Leap Team</p>
+          <p className="mt-5 sm:mt-8 text-sm text-white/50">— The NXT Leap Team</p>
         </div>
       </div>
     </section>

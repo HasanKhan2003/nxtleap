@@ -55,7 +55,7 @@ export default function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="relative py-16 sm:py-20 lg:py-28 overflow-hidden"
+      className="relative py-12 sm:py-20 lg:py-28 overflow-hidden"
     >
       {/* Subtle mesh gradient bg */}
       <div className="absolute inset-0 bg-deep-navy">
@@ -69,28 +69,28 @@ export default function Services() {
       </div>
 
       <div className="relative z-10 container-main">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_0.85fr]">
+        <div className="grid grid-cols-1 items-center gap-8 sm:gap-12 lg:grid-cols-[1fr_0.85fr]">
           <div>
             {/* Header */}
-            <div ref={headerRef} className="mb-10">
-              <span className="text-3xl sm:text-5xl font-bold uppercase text-cyan-accent">
+            <div ref={headerRef} className="mb-8 sm:mb-10">
+              <span className="text-2xl sm:text-5xl font-bold uppercase text-cyan-accent">
                 What We Offer
               </span>
             </div>
 
             {/* Service List */}
-            <div className="space-y-10">
+            <div className="space-y-7 sm:space-y-10">
               {services.map((service) => {
                 const Icon = service.icon
                 return (
                   <div
                     key={service.title}
-                    className="grid grid-cols-[72px_1fr] sm:grid-cols-[96px_1fr] gap-6 sm:gap-8 items-start"
+                    className="grid grid-cols-[48px_1fr] sm:grid-cols-[96px_1fr] gap-4 sm:gap-8 items-start"
                   >
                     {/* Icon */}
-                    <div className="flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center">
+                    <div className="flex h-12 w-12 sm:h-24 sm:w-24 items-center justify-center">
                       <Icon
-                        className="h-16 w-16 sm:h-20 sm:w-20 text-white"
+                        className="h-10 w-10 sm:h-20 sm:w-20 text-white"
                         strokeWidth={1.8}
                       />
                     </div>
@@ -116,7 +116,7 @@ export default function Services() {
             <img
               src="/images/superman-art.png"
               alt="Low-poly superhero figure representing scalable services"
-              className="w-full max-w-md lg:max-w-xl object-contain"
+              className="w-full max-w-[260px] sm:max-w-md lg:max-w-xl object-contain"
               loading="lazy"
             />
           </div>

@@ -33,7 +33,7 @@ function LeaderImage({
   role: string
 }) {
   return (
-    <div className="relative mx-auto w-full max-w-xl">
+    <div className="relative mx-auto w-full max-w-[280px] sm:max-w-xl">
       <img
         src={image}
         alt={name}
@@ -42,14 +42,14 @@ function LeaderImage({
       />
       <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 text-center">
         <div className="relative inline-block">
-          <span className="rounded-md bg-black/80 px-3 py-1 text-sm sm:text-base text-white">
+          <span className="rounded-md bg-black/80 px-2.5 sm:px-3 py-1 text-xs sm:text-base text-white">
             {role}
           </span>
-          <span className="absolute -right-6 -top-8 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-blue-primary text-white">
-            <Linkedin className="h-4 w-4" />
+          <span className="absolute -right-5 sm:-right-6 -top-7 sm:-top-8 flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-white bg-blue-primary text-white">
+            <Linkedin className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           </span>
         </div>
-        <h3 className="mt-2 whitespace-nowrap text-3xl sm:text-4xl font-bold text-white">
+        <h3 className="mt-2 whitespace-nowrap text-2xl sm:text-4xl font-bold text-white">
           {name}
         </h3>
       </div>
@@ -95,7 +95,7 @@ export default function About() {
               <img
                 src="/images/about-3d-shapes.png"
                 alt="Abstract 3D geometric shapes representing innovation and technology"
-                className="w-full max-w-md animate-float"
+                className="w-full max-w-[260px] sm:max-w-md animate-float"
                 loading="lazy"
               />
             </div>
@@ -105,7 +105,7 @@ export default function About() {
 
       <div className="bg-deep-navy text-white">
         <div className="container-main">
-        <div className="grid min-h-[640px] grid-cols-1 items-center gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:py-28">
+        <div className="grid grid-cols-1 items-center gap-8 py-12 sm:py-20 lg:min-h-[640px] lg:grid-cols-2 lg:gap-10 lg:py-28">
           <div className="max-w-2xl">
             <div>
               <h2 className="text-3xl sm:text-5xl font-bold uppercase text-cyan-accent">
@@ -135,7 +135,7 @@ export default function About() {
             <img
               src="/images/handshake-ai.png"
               alt="Digital handshake representing technology partnership"
-              className="w-full max-w-xl object-contain"
+              className="w-full max-w-[280px] sm:max-w-xl object-contain"
               loading="lazy"
             />
           </div>
@@ -144,29 +144,33 @@ export default function About() {
         {leaderMessages.map((leader) => (
           <div
             key={leader.name}
-            className="grid min-h-[680px] grid-cols-1 items-center gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:gap-16 lg:py-28"
+            className="grid grid-cols-1 items-center gap-6 py-12 sm:py-20 lg:min-h-[680px] lg:grid-cols-2 lg:gap-16 lg:py-28"
           >
-            {leader.imageSide === 'left' && (
+            <div
+              className={
+                leader.imageSide === 'left'
+                  ? 'order-1 lg:order-1'
+                  : 'order-1 lg:order-2'
+              }
+            >
               <LeaderImage
                 image={leader.image}
                 name={leader.name}
                 role={leader.role}
               />
-            )}
+            </div>
 
-            <div className="max-w-2xl space-y-8 text-base leading-8 lg:text-[17px]">
+            <div
+              className={
+                leader.imageSide === 'left'
+                  ? 'order-2 max-w-2xl space-y-5 text-sm leading-7 sm:space-y-8 sm:text-base sm:leading-8 lg:order-2 lg:text-[17px]'
+                  : 'order-2 max-w-2xl space-y-5 text-sm leading-7 sm:space-y-8 sm:text-base sm:leading-8 lg:order-1 lg:text-[17px]'
+              }
+            >
               {leader.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
-
-            {leader.imageSide === 'right' && (
-              <LeaderImage
-                image={leader.image}
-                name={leader.name}
-                role={leader.role}
-              />
-            )}
           </div>
         ))}
         </div>
