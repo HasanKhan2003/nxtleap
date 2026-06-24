@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { MapPin, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react'
@@ -23,6 +24,8 @@ export default function Contact() {
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [isSending, setIsSending] = useState(false)
+  const [error, setError] = useState('')
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -58,11 +61,49 @@ export default function Contact() {
     return () => ctx.revert()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    setIsSending(true)
+    setError('')
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error(
+          'Email service is not configured yet. Please add your EmailJS keys.'
+        )
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          user_name: formData.name,
+          user_email: formData.email,
+          user_subject: formData.subject,
+          reply_to: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'hello@nxtleap.io',
+        },
+        { publicKey }
+      )
+
+      setSubmitted(true)
+      setFormData({ name: '', email: '', subject: '', message: '' })
+      setTimeout(() => setSubmitted(false), 3000)
+    } catch (submitError) {
+      setError(
+        submitError instanceof Error
+          ? submitError.message
+          : 'Something went wrong while sending your message.'
+      )
+    } finally {
+      setIsSending(false)
+    }
   }
 
   return (
@@ -134,9 +175,10 @@ export default function Contact() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white">Message Sent!</h3>
+                <h3 className="text-xl font-bold text-white">Message Sent</h3>
                 <p className="mt-2 text-white/60">
-                  We'll get back to you shortly.
+                  Thanks for reaching out. Your message has been sent
+                  successfully, and our team will get back to you shortly.
                 </p>
               </div>
             ) : (
@@ -189,8 +231,15 @@ export default function Contact() {
                     className="input-dark resize-none"
                   />
                 </div>
-                <button type="submit" className="btn-primary w-full py-4">
-                  Send Message
+                {error ? (
+                  <p className="text-sm text-red-300">{error}</p>
+                ) : null}
+                <button
+                  type="submit"
+                  className="btn-primary w-full py-4 disabled:opacity-70 disabled:cursor-not-allowed"
+                  disabled={isSending}
+                >
+                  {isSending ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             )}
