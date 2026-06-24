@@ -22,7 +22,10 @@ export default function Contact() {
     subject: '',
     message: '',
   })
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>(
+    'idle'
+  )
+  const [errorMessage, setErrorMessage] = useState('')
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -58,11 +61,35 @@ export default function Contact() {
     return () => ctx.revert()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    setStatus('sending')
+    setErrorMessage('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json().catch(() => null)
+
+      if (!response.ok) {
+        throw new Error(result?.error || 'Failed to send your message.')
+      }
+
+      setStatus('success')
+      setFormData({ name: '', email: '', subject: '', message: '' })
+      setTimeout(() => setStatus('idle'), 3000)
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage(
+        error instanceof Error ? error.message : 'Failed to send your message.'
+      )
+    }
   }
 
   return (
@@ -117,7 +144,7 @@ export default function Contact() {
             ref={rightRef}
             className="p-6 sm:p-8 lg:p-10 rounded-2xl bg-white/[0.03] border border-white/[0.08]"
           >
-            {submitted ? (
+            {status === 'success' ? (
               <div className="text-center py-10">
                 <div className="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4">
                   <svg
@@ -141,6 +168,9 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                {status === 'error' ? (
+                  <p className="text-sm text-red-300">{errorMessage}</p>
+                ) : null}
                 <div>
                   <input
                     type="text"
@@ -189,8 +219,12 @@ export default function Contact() {
                     className="input-dark resize-none"
                   />
                 </div>
-                <button type="submit" className="btn-primary w-full py-4">
-                  Send Message
+                <button
+                  type="submit"
+                  className="btn-primary w-full py-4 disabled:opacity-60 disabled:cursor-not-allowed"
+                  disabled={status === 'sending'}
+                >
+                  {status === 'sending' ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             )}
