@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { MapPin, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react'
+import { MapPin, Linkedin } from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
