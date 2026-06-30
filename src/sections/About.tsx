@@ -4,11 +4,11 @@ const leaderMessages = [
   {
     name: 'SAAD FAROOQ',
     role: 'Message from Founder & CEO',
-    image: '/images/saad-farooq.png',
+    image: '/images/saad_farooq.png',
     imageSide: 'left',
+    linkedin: 'https://www.linkedin.com/in/saadfarooq-hrpod/',
     paragraphs: [
-      'As we stand on the threshold of a new era in technology, I am both proud and humbled to lead DEVPOD into the future. Our extraordinary journey rooted in relentless innovation and an unyielding commitment to excellence positions us not just as participants, but as pioneers shaping the very landscape of cloud development. In an age defined by digital transformation, our mission is bolder than ever: to empower creators, connect possibilities, and accelerate the world\'s technological evolution.',
-      'With our world-class team and disruptive mindset, DEVPOD is architecting the next wave of intelligent infrastructure; open, secure, and infinitely scalable. Our vision is clear: to make high-performance development accessible, collaborative, and frictionless for enterprises and builders worldwide. Together, we are not just building products; we are forging a legacy that will redefine what\'s possible in tech.',
+      'At DEVPOD, our mission is to help businesses build, scale, and innovate through reliable technology, strong talent, and future-ready solutions. As digital transformation continues to reshape the world, we remain committed to making high-quality development more accessible, collaborative, and scalable for enterprises and builders worldwide, while staying focused on innovation, excellence, and long-term client success.'
     ],
   },
   {
@@ -16,9 +16,19 @@ const leaderMessages = [
     role: 'Message from Co-Founder & COO',
     image: '/images/talal_khalid.png',
     imageSide: 'right',
+    linkedin: 'https://www.linkedin.com/in/mtalalkhalid-hrpod/',
     paragraphs: [
-      'At DEVPOD, operational excellence is not just a benchmark, it\'s a promise. As we navigate the complexities of hyper-scale growth, my focus remains steadfast on building resilient systems and fostering a culture of agility that empowers every innovator within our community. Our commitment to trust, transparency, and operational mastery sets a new standard in the tech industry.',
-      'We are scaling with integrity, building partnerships that transcend boundaries, and delivering value that endures. My invitation to every stakeholder is simple: let\'s challenge norms, disrupt markets, and script the narrative of a global technology powerhouse together. The journey ahead is filled with opportunity, let\'s seize it with vision and collective resolve.',
+      'At DEVPOD, our focus is on building strong systems, reliable operations, and long-term partnerships that help businesses scale with confidence. As we grow, we remain committed to trust, transparency, agility, and consistent delivery, ensuring every engagement creates real value for our clients. Together with our teams and partners, we aim to challenge limits, deliver with integrity, and build DEVPOD into a global technology partner known for excellence and impact.'
+    ],
+  },
+  {
+    name: 'ASIM RIZVI',
+    role: 'Message from Strategic Advisor',
+    image: '/images/asim_rizvi.png',
+    imageSide: 'left',
+    linkedin: 'https://www.linkedin.com/in/rizviasim/',
+    paragraphs: [
+      'At DEVPOD, I see a strong opportunity to help businesses scale through the right mix of technology, talent, and strategic execution. My role is to support the team with practical guidance, industry insight, and a focus on building solutions that are reliable, scalable, and aligned with real business needs. Together, we aim to create lasting value for clients by combining innovation, operational discipline, and trusted delivery.',
     ],
   },
 ]
@@ -27,32 +37,48 @@ function LeaderImage({
   image,
   name,
   role,
+  linkedin,
 }: {
   image: string
   name: string
   role: string
+  linkedin?: string
 }) {
   return (
-    <div className="relative mx-auto w-full max-w-[280px] sm:max-w-xl">
-      <img
-        src={image}
-        alt={name}
-        className="w-full object-contain"
-        loading="lazy"
-      />
-      <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 text-center">
-        <div className="relative inline-block">
-          <span className="rounded-md bg-black/80 px-2.5 sm:px-3 py-1 text-xs sm:text-base text-white">
-            {role}
-          </span>
-          <span className="absolute -right-5 sm:-right-6 -top-7 sm:-top-8 flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full border-2 border-white bg-blue-primary text-white">
-            <Linkedin className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-          </span>
+    <div className="mx-auto w-full max-w-[250px] sm:max-w-[280px] text-center">
+      <div className="relative">
+        <img
+          src={image}
+          alt={name}
+          className="w-full object-contain"
+          loading="lazy"
+        />
+        <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2">
+          <div className="relative inline-block">
+            <span className="rounded-md bg-black px-2.5 sm:px-3 py-1 text-[10px] sm:text-sm text-white">
+              {role}
+            </span>
+            {linkedin ? (
+              <a
+                href={linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="absolute -right-4 sm:-right-5 -top-6 sm:-top-7 flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full border-2 border-white bg-blue-primary text-white"
+                aria-label={`${name} LinkedIn profile`}
+              >
+                <Linkedin className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+              </a>
+            ) : (
+              <span className="absolute -right-4 sm:-right-5 -top-6 sm:-top-7 flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full border-2 border-white bg-blue-primary text-white">
+                <Linkedin className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+              </span>
+            )}
+          </div>
         </div>
-        <h3 className="mt-2 whitespace-nowrap text-2xl sm:text-4xl font-bold text-white">
-          {name}
-        </h3>
       </div>
+      <h3 className="mt-4 whitespace-nowrap text-xl sm:text-2xl font-bold text-white">
+        {name}
+      </h3>
     </div>
   )
 }
@@ -141,38 +167,29 @@ export default function About() {
           </div>
         </div>
 
-        {leaderMessages.map((leader) => (
-          <div
-            key={leader.name}
-            className="grid grid-cols-1 items-center gap-6 py-12 sm:py-20 lg:min-h-[680px] lg:grid-cols-2 lg:gap-16 lg:py-28"
-          >
-            <div
-              className={
-                leader.imageSide === 'left'
-                  ? 'order-1 lg:order-1'
-                  : 'order-1 lg:order-2'
-              }
-            >
-              <LeaderImage
-                image={leader.image}
-                name={leader.name}
-                role={leader.role}
-              />
-            </div>
+        <div className="py-12 sm:py-20 lg:py-28">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-10">
+            {leaderMessages.map((leader) => (
+              <div
+                key={leader.name}
+                className="flex flex-col items-center text-center gap-6"
+              >
+                <LeaderImage
+                  image={leader.image}
+                  name={leader.name}
+                  role={leader.role}
+                  linkedin={leader.linkedin}
+                />
 
-            <div
-              className={
-                leader.imageSide === 'left'
-                  ? 'order-2 max-w-2xl space-y-5 text-sm leading-7 sm:space-y-8 sm:text-base sm:leading-8 lg:order-2 lg:text-[17px]'
-                  : 'order-2 max-w-2xl space-y-5 text-sm leading-7 sm:space-y-8 sm:text-base sm:leading-8 lg:order-1 lg:text-[17px]'
-              }
-            >
-              {leader.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
+                <div className="max-w-sm space-y-4 text-sm leading-7 sm:text-base sm:leading-8 lg:text-[17px]">
+                  {leader.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
         </div>
       </div>
     </section>

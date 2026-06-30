@@ -132,9 +132,9 @@ export default function Hero({ scrollTo }: HeroProps) {
           className="mt-12 sm:mt-16 flex flex-wrap items-center justify-center gap-6 sm:gap-12"
         >
           {[
-            { value: '500+', label: 'Talents Deployed' },
-            { value: '50+', label: 'Global Clients' },
-            { value: '98%', label: 'Client Satisfaction' },
+            { value: '350+', label: 'Trusted Clients' },
+            { value: '500+', label: 'Resources Deployed' },
+            { value: '99%', label: 'Client Satisfaction' },
           ].map((stat) => (
             <div key={stat.label} className="flex flex-col items-center">
               <span className="text-xl sm:text-3xl font-bold text-cyan-accent">

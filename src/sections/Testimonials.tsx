@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger)
 const testimonials = [
   {
     quote:
-      'At Momba.ai and multiple other companies, I have used DEV POD as a partner for technology talent multiple times. I have been thoroughly impressed with our partnership with DEV POD. They consistently provide exceptional talent at a highly competitive cost, delivering outstanding value for our organization. The DEV POD team demonstrates true ownership of every project, approaching every task with dedication, professionalism, and remarkable technical skills.\n\nWhat truly sets DEV POD apart is their proactive communication and relentless drive to exceed our expectations. Every resource we\'ve worked with has shown a strong sense of responsibility and a commitment to our success. I highly recommend DEV POD to any organization seeking high-quality, reliable, and economical technology solutions.',
-    name: 'Asim Rizvi',
-    title: 'Chief Executive Office - momba.ai',
+      'At Quantum Serve Inc, I have used DEV POD as a partner for technology talent multiple times. I have been thoroughly impressed with our partnership with DEV POD. They consistently provide exceptional talent at a highly competitive cost, delivering outstanding value for our organization. The DEV POD team demonstrates true ownership of every project, approaching every task with dedication, professionalism, and remarkable technical skills.\n\nWhat truly sets DEV POD apart is their proactive communication and relentless drive to exceed our expectations. Every resource we\'ve worked with has shown a strong sense of responsibility and a commitment to our success. I highly recommend DEV POD to any organization seeking high-quality, reliable, and economical technology solutions.',
+    name: 'Tom Moore',
+    title: 'Chief Executive Office – Quantum Serve Inc',
   },
   {
     quote:
@@ -55,7 +55,7 @@ export default function Testimonials() {
     <section
       id="testimonials"
       ref={sectionRef}
-      className="relative py-12 sm:py-20 lg:py-28 overflow-hidden"
+      className="relative pt-8 pb-12 sm:pt-14 sm:pb-20 lg:pt-20 lg:pb-28 overflow-hidden"
     >
       {/* Subtle background */}
       <div className="absolute inset-0 bg-deep-navy">

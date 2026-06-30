@@ -7,33 +7,33 @@ gsap.registerPlugin(ScrollTrigger)
 const reasons = [
   {
     number: '01',
-    title: 'Proven Expertise',
+    title: 'Transparency',
     description:
-      '30+ years of combined leadership experience in tech innovation.',
+      'Clear communication at every stage of the engagement.',
   },
   {
     number: '02',
-    title: 'Agility at Scale',
+    title: 'Honesty',
     description:
-      'Rapid deployment of talent and solutions without compromising quality.',
+      'We stay open, realistic, and direct in every partnership.',
   },
   {
     number: '03',
-    title: 'Future-Ready',
+    title: 'Ownership',
     description:
-      'We embed scalability and adaptability into every engagement.',
+      'We take responsibility for results and keep working until the goal is achieved.',
   },
   {
     number: '04',
-    title: 'Client-Centric',
+    title: 'Quality',
     description:
-      'Transparent collaboration and tailored strategies designed around your unique business needs.',
+      'Vetted tech talent matched carefully to your business needs.',
   },
   {
     number: '05',
-    title: 'Global Reach',
+    title: 'Cost Efficiency',
     description:
-      'Serving startups to Fortune 500 companies worldwide with a consistent standard of excellence.',
+      'Strong technical resources with better cost control and long-term value.',
   },
 ]
 
@@ -146,7 +146,6 @@ export default function WhyChooseUs() {
           </div>
         </div>
       </div>
-
       <div className="mt-12 sm:mt-20 bg-deep-navy py-12 sm:py-20 lg:py-28 text-white">
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_220px] items-center gap-6 sm:gap-10">
@@ -162,9 +161,9 @@ export default function WhyChooseUs() {
                 What We Believe
               </h2>
               <p className="mx-auto mt-5 sm:mt-8 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8">
-                With good data and the right technology, people and institutions
-                today can still solve hard problems and change the world for the
-                better.
+                Deliver quality and cost efficiency with an obsession for success.
+                Be diligent and transparent in communication, and our clients
+                will trust us as we grow together.
               </p>
             </div>
 

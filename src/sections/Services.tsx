@@ -1,28 +1,47 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Users, Code2, Lightbulb } from 'lucide-react'
+import {
+  BadgeDollarSign,
+  BriefcaseBusiness,
+  Earth,
+  Globe2,
+  ShieldCheck,
+} from 'lucide-react'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const services = [
   {
-    icon: Users,
-    title: 'Staff Augmentation',
+    icon: BriefcaseBusiness,
+    title: 'Specialized Resourcing',
     description:
       'Access elite, vetted tech talent on demand to rapidly scale your teams. Flexible engagement models ensure the right developers, engineers, and specialists for every project.',
   },
   {
-    icon: Code2,
-    title: 'Tech Development Solutions',
+    icon: BadgeDollarSign,
+    title: 'Cost Leverage with Quality',
     description:
-      'Custom software development aligned with your business goals, built to be agile, scalable, and secure. We deliver complete solutions from ideation to deployment.',
+      'Our team is hand picked to your needs based our specialized sourcing network and bench. We guarantee the quality of our resources to ensure you receive the quality you deserve without worrying about market dynamics and exploding cost issues.',
   },
   {
-    icon: Lightbulb,
-    title: 'Digital Transformation Consultancy',
+    icon: ShieldCheck,
+    title: 'Vertical Specialties',
     description:
-      'Comprehensive audits to uncover growth opportunities, with clear roadmaps for AI, cloud, and automation adoption. We empower innovation and ensure seamless change management.',
+      "We specialize so you don't have to. Our bench and recruitment expertise in three key areas below work to your advantage:",
+    specialties: ['ServiceNow', 'Agentic AI Development', 'Full Stack Engineering', 'AI Enabled Quality Assurance'],
+  },
+  {
+    icon: Earth,
+    title: 'Time Zone Alignment',
+    description:
+      'Our team works in your time zone. We principally believe that interaction is critical for success especially for remote teams. To achieve success for you, we work in your time zone to ensure continuous communication and collaboration at each step of the engagement.',
+  },
+  {
+    icon: Globe2,
+    title: 'Our Reach is Your Leverage',
+    description:
+      'Because we have served more than 350+ clients across the globe, we have a wide reach for talent across Pakistan. Our award-winning recruiting team can find the skills and talent you need while ensuring your cost efficiency and quality is never compromised.',
   },
 ]
 
@@ -69,56 +88,63 @@ export default function Services() {
       </div>
 
       <div className="relative z-10 container-main">
-        <div className="grid grid-cols-1 items-center gap-8 sm:gap-12 lg:grid-cols-[1fr_0.85fr]">
-          <div>
-            {/* Header */}
-            <div ref={headerRef} className="mb-8 sm:mb-10">
-              <span className="text-2xl sm:text-5xl font-bold uppercase text-cyan-accent">
-                What We Offer
-              </span>
-            </div>
-
-            {/* Service List */}
-            <div className="space-y-7 sm:space-y-10">
-              {services.map((service) => {
-                const Icon = service.icon
-                return (
-                  <div
-                    key={service.title}
-                    className="grid grid-cols-[48px_1fr] sm:grid-cols-[96px_1fr] gap-4 sm:gap-8 items-start"
-                  >
-                    {/* Icon */}
-                    <div className="flex h-12 w-12 sm:h-24 sm:w-24 items-center justify-center">
-                      <Icon
-                        className="h-10 w-10 sm:h-20 sm:w-20 text-white"
-                        strokeWidth={1.8}
-                      />
-                    </div>
-
-                    <div>
-                      {/* Title */}
-                      <h3 className="text-lg sm:text-2xl font-bold uppercase text-cyan-accent mb-3 sm:mb-4">
-                        {service.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="max-w-2xl text-sm sm:text-base text-white leading-6 sm:leading-7">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
+        <div className="max-w-6xl">
+          {/* Header */}
+          <div ref={headerRef} className="mb-8 sm:mb-10">
+            <span className="text-2xl sm:text-5xl font-bold uppercase text-cyan-accent">
+              What We Offer
+            </span>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
-            <img
-              src="/images/superman-art.png"
-              alt="Low-poly superhero figure representing scalable services"
-              className="w-full max-w-[260px] sm:max-w-md lg:max-w-xl object-contain"
-              loading="lazy"
-            />
+          {/* Service List */}
+          <div className="grid grid-cols-1 gap-7 sm:gap-10 lg:grid-cols-2">
+            {services.map((service, index) => {
+              const Icon = service.icon
+              const itemPlacement =
+                index === 0
+                  ? 'lg:col-start-1 lg:row-start-1'
+                  : index === 3
+                    ? 'lg:col-start-2 lg:row-start-1'
+                  : index === 1
+                      ? 'lg:col-start-1 lg:row-start-2'
+                      : index === 4
+                        ? 'lg:col-start-2 lg:row-start-2'
+                        : 'lg:col-start-1 lg:row-start-3'
+
+              return (
+                <div
+                  key={service.title}
+                  className={`grid grid-cols-[48px_1fr] sm:grid-cols-[96px_1fr] gap-4 sm:gap-8 items-start ${itemPlacement}`}
+                >
+                  {/* Icon */}
+                  <div className="flex h-12 w-12 sm:h-24 sm:w-24 items-center justify-center">
+                    <Icon
+                      className="h-10 w-10 sm:h-20 sm:w-20 text-white"
+                      strokeWidth={1.8}
+                    />
+                  </div>
+
+                  <div>
+                    {/* Title */}
+                    <h3 className="text-lg sm:text-2xl font-bold uppercase text-cyan-accent mb-3 sm:mb-4">
+                      {service.title}
+                    </h3>
+
+                    {/* Description */}
+                    <div className="max-w-2xl text-sm sm:text-base text-white leading-6 sm:leading-7 space-y-3">
+                      <p>{service.description}</p>
+                      {'specialties' in service && service.specialties ? (
+                        <ul className="space-y-1 pl-5 list-disc text-white/90">
+                          {service.specialties.map((specialty) => (
+                            <li key={specialty}>{specialty}</li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
