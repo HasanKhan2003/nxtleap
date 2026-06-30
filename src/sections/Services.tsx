@@ -90,7 +90,7 @@ export default function Services() {
       <div className="relative z-10 container-main">
         <div className="max-w-6xl">
           {/* Header */}
-          <div ref={headerRef} className="mb-8 sm:mb-10">
+          <div ref={headerRef} className="mb-8 sm:mb-10 flex justify-center">
             <span className="text-2xl sm:text-5xl font-bold uppercase text-cyan-accent">
               What We Offer
             </span>

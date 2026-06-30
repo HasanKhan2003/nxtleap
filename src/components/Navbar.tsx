@@ -44,19 +44,19 @@ export default function Navbar({ scrollTo }: NavbarProps) {
           {/* Logo */}
           <button
             onClick={() => handleNavClick('#hero')}
-            className="flex items-center gap-0 text-2xl font-bold tracking-tight"
+            className="flex items-center gap-0 text-3xl font-bold tracking-tight"
           >
             <span className="text-white">nxtleap</span>
             <span className="text-blue-primary">.io</span>
           </button>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
               <button
                 key={link.target}
                 onClick={() => handleNavClick(link.target)}
-                className="relative text-sm font-medium text-white/70 hover:text-white transition-colors duration-200 group"
+                className="relative text-base font-medium text-white/70 hover:text-white transition-colors duration-200 group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
@@ -68,7 +68,7 @@ export default function Navbar({ scrollTo }: NavbarProps) {
           <div className="hidden lg:flex items-center gap-4">
             <button
               onClick={() => handleNavClick('#contact')}
-              className="btn-primary text-sm py-2.5 px-6"
+              className="btn-primary text-base py-3 px-7"
             >
               Hire Talent
             </button>
@@ -77,7 +77,7 @@ export default function Navbar({ scrollTo }: NavbarProps) {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-white"
+            className="lg:hidden p-3 text-white"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}

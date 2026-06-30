@@ -7,9 +7,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 const socialLinks = [
   { icon: Linkedin, label: 'LinkedIn' },
-  { icon: Twitter, label: 'Twitter' },
-  { icon: Facebook, label: 'Facebook' },
-  { icon: Instagram, label: 'Instagram' },
+  // { icon: Twitter, label: 'Twitter' },
+  // { icon: Facebook, label: 'Facebook' },
+  // { icon: Instagram, label: 'Instagram' },
 ]
 
 export default function Contact() {

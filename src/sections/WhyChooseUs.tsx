@@ -175,16 +175,12 @@ export default function WhyChooseUs() {
             />
           </div>
 
-          <div className="mt-12 sm:mt-28">
-            <div className="flex items-center justify-center gap-6">
-              <div className="hidden h-px flex-1 bg-cyan-accent sm:block" />
-              <h3 className="text-2xl sm:text-5xl font-bold uppercase text-cyan-accent">
-                Trusted By
-              </h3>
-              <div className="hidden h-px flex-1 bg-cyan-accent sm:block" />
-            </div>
+          <div className="mt-12 sm:mt-28 relative">
+            <h3 className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-deep-navy px-4 sm:px-8 text-2xl sm:text-4xl font-bold uppercase text-cyan-accent whitespace-nowrap z-10">
+              Trusted By
+            </h3>
 
-            <div className="mt-[-2px] rounded-2xl border-2 border-cyan-accent px-4 sm:px-6 py-6 sm:py-10 overflow-hidden">
+            <div className="rounded-2xl border-2 border-cyan-accent px-4 sm:px-6 py-6 sm:py-10 overflow-hidden">
               <div className="trusted-logo-track flex w-max items-center gap-8 sm:gap-14">
                 {[...logos, ...logos].map((logo, index) => (
                   <div

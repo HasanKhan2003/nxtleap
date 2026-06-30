@@ -168,11 +168,21 @@ export default function About() {
         </div>
 
         <div className="py-12 sm:py-20 lg:py-28">
+          <div className="mb-10 sm:mb-14 text-center">
+            <h2 className="text-3xl sm:text-5xl font-bold uppercase text-cyan-accent">
+              MEET THE LEADERSHIP
+            </h2>
+          </div>
+
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-10">
             {leaderMessages.map((leader) => (
               <div
                 key={leader.name}
-                className="flex flex-col items-center text-center gap-6"
+                className="flex flex-col items-center text-center gap-6 rounded-2xl bg-white/[0.04] p-5 sm:p-8 lg:p-10 transition-all duration-400 hover:bg-white/[0.06]"
+                style={{
+                  transitionTimingFunction:
+                    'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+                }}
               >
                 <LeaderImage
                   image={leader.image}

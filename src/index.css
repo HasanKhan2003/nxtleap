@@ -102,11 +102,11 @@
 
   /* Section label style */
   .section-label {
-    @apply text-xs font-semibold tracking-[0.1em] uppercase text-cyan-accent;
+    @apply text-2xl font-semibold tracking-[0.1em] uppercase text-cyan-accent;
   }
 
   .section-label-light {
-    @apply text-xs font-semibold tracking-[0.1em] uppercase text-blue-primary;
+    @apply text-2xl font-bold tracking-[0.1em] uppercase text-blue-primary;
   }
 
   /* Container */
