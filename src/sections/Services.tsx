@@ -35,7 +35,7 @@ const services = [
     icon: Earth,
     title: 'Time Zone Alignment',
     description:
-      'Our team works in your time zone. We principally believe that interaction is critical for success especially for remote teams. To achieve success for you, we work in your time zone to ensure continuous communication and collaboration at each step of the engagement.',
+      'Our  team works in your time zone. We principally believe that interaction is critical for success especially for remote teams. To achieve success for you, we work in your time zone to ensure continuous communication and collaboration at each step of the engagement.',
   },
   {
     icon: Globe2,
