@@ -61,7 +61,7 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
 
     await resend.emails.send({
       from: 'nxtleap <onboarding@resend.dev>',
-      to: 'hello@nxtleap.io',
+      to: 'hasan.khan@dev-pod.io',
       subject: 'nxtleap Form Submission',
       text: textBody,
       html: htmlBody,
