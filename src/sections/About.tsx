@@ -8,7 +8,7 @@ const leaderMessages = [
     imageSide: 'left',
     linkedin: 'https://www.linkedin.com/in/saadfarooq-hrpod/',
     paragraphs: [
-      'At DEVPOD, our mission is to help businesses build, scale, and innovate through reliable technology, strong talent, and future-ready solutions. As digital transformation continues to reshape the world, we remain committed to making high-quality development more accessible, collaborative, and scalable for enterprises and builders worldwide, while staying focused on innovation, excellence, and long-term client success.'
+      'At NXT Leap, our mission is to help businesses build, scale, and innovate through reliable technology, strong talent, and future-ready solutions. As digital transformation continues to reshape the world, we remain committed to making high-quality development more accessible, collaborative, and scalable for enterprises and builders worldwide, while staying focused on innovation, excellence, and long-term client success.'
     ],
   },
   {
@@ -18,7 +18,7 @@ const leaderMessages = [
     imageSide: 'right',
     linkedin: 'https://www.linkedin.com/in/mtalalkhalid-hrpod/',
     paragraphs: [
-      'At DEVPOD, our focus is on building strong systems, reliable operations, and long-term partnerships that help businesses scale with confidence. As we grow, we remain committed to trust, transparency, agility, and consistent delivery, ensuring every engagement creates real value for our clients. Together with our teams and partners, we aim to challenge limits, deliver with integrity, and build DEVPOD into a global technology partner known for excellence and impact.'
+      'At NXT Leap, our focus is on building strong systems, reliable operations, and long-term partnerships that help businesses scale with confidence. As we grow, we remain committed to trust, transparency, agility, and consistent delivery, ensuring every engagement creates real value for our clients. Together with our teams and partners, we aim to challenge limits, deliver with integrity, and build DEVPOD into a global technology partner known for excellence and impact.'
     ],
   },
   {
@@ -28,7 +28,7 @@ const leaderMessages = [
     imageSide: 'left',
     linkedin: 'https://www.linkedin.com/in/rizviasim/',
     paragraphs: [
-      'At DEVPOD, I see a strong opportunity to help businesses scale through the right mix of technology, talent, and strategic execution. My role is to support the team with practical guidance, industry insight, and a focus on building solutions that are reliable, scalable, and aligned with real business needs. Together, we aim to create lasting value for clients by combining innovation, operational discipline, and trusted delivery.',
+      'At NXT Leap, I see a strong opportunity to help businesses scale through the right mix of technology, talent, and strategic execution. My role is to support the team with practical guidance, industry insight, and a focus on building solutions that are reliable, scalable, and aligned with real business needs. Together, we aim to create lasting value for clients by combining innovation, operational discipline, and trusted delivery.',
     ],
   },
 ]
